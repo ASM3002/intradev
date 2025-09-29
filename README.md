@@ -16,10 +16,9 @@ It provides:
 
 How To Use
 ----------------------
-1. Install the IntraDev Library
 For detailed tutorials on the use of the IntraDev Library, check out our YouTube channel.
 If you have questions, post them **here** and we will make a YouTube tutorial if required.
-
+1. Install the IntraDev Library
 ```bash
 pip install intradev
 ```
@@ -31,21 +30,28 @@ import intradev as id
 ```python
 data = id.DataModel()
 ```
-4. Add Functions, Inputs, and Outputs to the Data Model
+4. Input GUI Metadata
+```python
+data.title("Test GUI Application")
+data.description("This is a demo description for an IntraDev generated GUI!")
+data.directions(["1. First direction step.",
+                 "2. Second direction step.",])
+```
+5. Add Functions, Inputs, and Outputs to the Data Model
 ```python
 data.addInput("Input Filepath", id="0")
 data.addFunction(functionName, "Button Label", inputMap={"inputFilePath": "0"})
 data.addOutput("Output File", id="filepath")
 ```
-5. Build GUI Using Data Model
+6. Build GUI Using Data Model
 ```python
-id.buildUI(data, title="GUI Application Title")
+data.buildUI()
 ```
 
 Code of Conduct
 ----------------------
 
-IntraDev is a privately owned open source project developed by Aiden McDougal to support
+IntraDev is a privately-owned open source project developed by Aiden McDougal to support
 the IntraDev Professional Tools. This package is open source to promote Python GUI development
 in both professional and academic environments. The IntraDev leadership has made a strong
 commitment to creating an easy to use, powerful tool to accelerate Python tool creation. 

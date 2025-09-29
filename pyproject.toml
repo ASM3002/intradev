@@ -22,36 +22,4 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/asm3002/intradev"
-Issues = "https://github.com/asm3002/intradev/issues"
-
-[tool.hatch.build]
-exclude = [
-  "/.venv",
-  "/dist",
-  "/build",
-  "**/__pycache__",
-  "**/*.pyc",
-  ".DS_Store",
-  ".git",
-  ".gitignore",
-  ".gitattributes",
-  "*.ipynb_checkpoints",
-  "test.py",
-]
-
-[tool.hatch.build.targets.wheel]
-exclude = [
-  ".venv/",
-  "dist/",
-  "build/",
-  ".git/",
-  ".gitignore",
-  ".gitattributes",
-  ".DS_Store",
-  "**/__pycache__/",
-  "**/*.pyc",
-  "**/*.pyo",
-  "*~",
-  "*.ipynb_checkpoints",
-  "test.py",
-]
+Issues = "https://
