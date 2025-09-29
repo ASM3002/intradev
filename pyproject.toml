@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "intradev"
 version = "0.1.0"
 authors = [
-  { name="Aiden McDougal", email="lilsteeler03@gmail.com" },
+  { name="Aiden McDougal", email="lilsteeler03@gmail.com" }
 ]
 description = "tool to accelerate creation of simple IO Python GUIs."
 readme = "README.md"
@@ -17,9 +17,41 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-  "customtkinter>=5.2",
+  "customtkinter>=5.2"
 ]
 
 [project.urls]
 Homepage = "https://github.com/asm3002/intradev"
-Issues = "https://
+Issues = "https://github.com/asm3002/intradev/issues"
+
+[tool.hatch.build]
+exclude = [
+  "/.venv",
+  "/dist",
+  "/build",
+  "**/__pycache__",
+  "**/*.pyc",
+  ".DS_Store",
+  ".git",
+  ".gitignore",
+  ".gitattributes",
+  "*.ipynb_checkpoints",
+  "test.py"
+]
+
+[tool.hatch.build.targets.wheel]
+exclude = [
+  ".venv/",
+  "dist/",
+  "build/",
+  ".git/",
+  ".gitignore",
+  ".gitattributes",
+  ".DS_Store",
+  "**/__pycache__/",
+  "**/*.pyc",
+  "**/*.pyo",
+  "*~",
+  "*.ipynb_checkpoints",
+  "test.py"
+]
