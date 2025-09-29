@@ -12,6 +12,19 @@ class DataModel():
         self.functions = {}
         self.outputs = {}
         
+        self._title = "IntraDev GUI Application"
+        self._description = None
+        self._directions = []
+        
+    def title(self, title : str):
+        self._title = title
+        
+    def description(self, description: str):
+        self._description = description
+        
+    def directions(self, directions: list[str]):
+        self._directions = directions
+        
     def addInput(self, label, type="file", id=None):
         id = label if id is None else id
         #1. Check if ID is unique
@@ -48,25 +61,24 @@ class DataModel():
         }
         
     
-def buildUI(data, title, description=None, directions=[], colorTheme="blue"):
-    app = _UIConstructor(data, toolTitle=title, description=description, directions=directions, colorTheme=colorTheme)
-    app.geometry("900x500")
-    app.mainloop()
+    def buildUI(self, colorTheme="blue"):
+        app = _UIConstructor(self, colorTheme=colorTheme)
+        app.geometry("900x500")
+        app.mainloop()
 
 
 
 class _UIConstructor(ctk.CTk):
-    def __init__(self, dataModel: DataModel, toolTitle: str = "IntraDev GUI", description=None, directions = [], browseFirstInput: bool = True, colorTheme="blue"):
+    def __init__(self, dataModel: DataModel, colorTheme="blue"):
         super().__init__()
         self.title("IntraDev GUI")
         ctk.set_appearance_mode("system")
         ctk.set_default_color_theme(colorTheme)
 
         self.dataModel = dataModel
-        self.toolTitle = toolTitle
-        self.description = description
-        self.directions = directions
-        self.browseFirstInput = browseFirstInput
+        self.toolTitle = dataModel._title
+        self.description = dataModel._description
+        self.directions = dataModel._directions
 
         self.inputWidgets = {}
         self.outputWidgets = {}
