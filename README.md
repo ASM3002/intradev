@@ -41,19 +41,4 @@ data.directions(["1. First direction step.",
 5. Add Functions, Inputs, and Outputs to the Data Model
 ```python
 data.addInput("Input Filepath", id="0")
-data.addFunction(functionName, "Button Label", inputMap={"inputFilePath": "0"}, outputIDs=["filepath"])
-data.addOutput("Output File", id="filepath")
-```
-6. Build GUI Using Data Model
-```python
-data.buildUI()
-```
-
-Code of Conduct
-----------------------
-
-IntraDev is a privately-owned open source project developed by Aiden McDougal to support
-the IntraDev Professional Tools. This package is open source to promote Python GUI development
-in both professional and academic environments. The IntraDev leadership has made a strong
-commitment to creating an easy to use, powerful tool to accelerate Python tool creation. 
-
+data.addFunction(functionName, 
